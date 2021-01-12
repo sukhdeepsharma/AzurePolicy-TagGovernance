@@ -2,7 +2,7 @@
 
 Recently had a requirement from a client that all of their Azure VMs must be tagged with a specific set of tags to be used by Monitoring tool to cut a service ticket when a VM is down based on production or non-production classification, and also use epoch maintenance time range tag to avoid a ticket when VM is down intemtionally for maintenance. 
 
-Custom policies provisioned with Terraform were used along with initiative definition to govern 2 required tags for monitoring.  Policies make sure that all VM resources have monitier_tier and maintenance_epoch-epoch tags with valid values.  For monitier_tier tag, values are auto generated based on the keywords [prod, prd, test, QA, dev] in the VM’s name. If no keyword is present in VM name then it will be considered the production.
+Custom policies provisioned with Terraform were used along with initiative definition to govern the required tags for monitoring.  Policies make sure that all VM resources have monitier_tier and maintenance_epoch-epoch tags with valid values.  For monitor_tier tag, values are auto generated based on the keywords [prod, prd, test, QA, dev] in the VM’s name. If no keyword is present in VM name then it will be considered the production.
 
 ```json
 {
